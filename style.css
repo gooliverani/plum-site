@@ -98,7 +98,7 @@ header.site {
   text-decoration: none;
   line-height: 1;
 }
-.brand .logo { height: 2rem; width: auto; display: block; }
+.brand .logo { height: 3rem; width: auto; display: block; }
 /* the wordmark text stays in the DOM for screen readers; the lockup carries it visually */
 .brand .wordmark { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .brand .tick { color: var(--leaf); }
