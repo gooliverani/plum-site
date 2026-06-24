@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Evidence — every claim, with its reproduction command | Plum</title>
-<meta name="description" content="Every factual claim Plum makes, paired with the exact command that reproduces it and the observed result. No metric without methodology.">
-<link rel="icon" type="image/svg+xml" href="plum-icon.svg">
+<title>Evidence — every claim, with its reproduction command | Tilltrend</title>
+<meta name="description" content="Every factual claim Tilltrend makes, paired with the exact command that reproduces it and the observed result. No metric without methodology.">
+<link rel="icon" type="image/svg+xml" href="tilltrend-icon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site">
-  <a class="brand" href="index.html"><img class="logo" src="plum-primary-lockup.svg" alt="Plum" width="160" height="60"><span class="wordmark">Plum<span class="tick">&#10003;</span></span></a>
+  <a class="brand" href="index.html"><img class="logo" src="tilltrend-primary-lockup.svg" alt="Tilltrend" width="160" height="60"><span class="wordmark">Tilltrend<span class="tick">&#10003;</span></span></a>
   <nav>
     <a href="index.html">Home</a>
     <a href="product.html">Product</a>
     <a href="evidence.html" aria-current="page">Evidence</a>
     <a href="changelog.html">Changelog</a>
     <a href="about.html">About</a>
-    <a class="cta" href="mailto:vladimirvukojicic@gmail.com?subject=Plum%20early%20access">Early access</a>
+    <a class="cta" href="mailto:vladimirvukojicic@gmail.com?subject=Tilltrend%20early%20access">Early access</a>
   </nav>
 </header>
 
@@ -33,7 +33,7 @@ achievement.</p>
 
 <h2>The dataset, honestly</h2>
 
-<p>Plum is pre-launch, so there is no merchant data. The demo warehouse is
+<p>Tilltrend is pre-launch, so there is no merchant data. The demo warehouse is
 built from a <strong>public training dataset</strong> — CRM/ERP extracts of
 bicycle-and-accessories sales, order dates 2010-12-29 to 2014-01-28: 60,398
 sales lines, 27,659 orders, 18,484 customers, 295 products, total revenue
@@ -54,8 +54,8 @@ when we last ran each command.</p>
   <h3>Claim 1 — Every number in an answer is receipted, and the receipt replays without the model</h3>
   <dl>
     <dt>Reproduce</dt>
-    <dd><pre><code>python app\scripts\plum_ask.py "What was total revenue?"
-python app\scripts\plum_replay.py rcp_c60c017f43c346328383448a66088735</code></pre></dd>
+    <dd><pre><code>python app\scripts\ask.py "What was total revenue?"
+python app\scripts\replay.py rcp_c60c017f43c346328383448a66088735</code></pre></dd>
     <dt>What you should observe</dt>
     <dd>The answer's RECEIPTED FACTS section shows <code>total_revenue = 29,356,250</code>
     with a receipt id and hash. Replaying that receipt re-executes the same SQL
@@ -212,7 +212,7 @@ python app\scripts\run_quality_checks.py</code></pre>
   <h3>Claim 8 — When the data doesn't exist, the agent refuses in governed text</h3>
   <dl>
     <dt>Reproduce</dt>
-    <dd><pre><code>python app\scripts\plum_ask.py "Show me the conversion funnel"</code></pre></dd>
+    <dd><pre><code>python app\scripts\ask.py "Show me the conversion funnel"</code></pre></dd>
     <dt>What you should observe</dt>
     <dd>No receipted facts, no approximation, no made-up funnel. A REFUSAL
     section quoting the governed "Not yet supported" text from
@@ -249,21 +249,21 @@ python app\scripts\run_quality_checks.py</code></pre>
 
 <div class="honest">
   <p>No customers, no testimonials, no revenue-lift numbers, no "stores
-  created" counter — Plum is pre-launch and has none of these. No funnel or
+  created" counter — Tilltrend is pre-launch and has none of these. No funnel or
   promo analytics — the connectors that would make them honest don't exist yet
   (claim 8 shows the product saying so itself). When any of this changes, the
   claim lands here first, with its command.</p>
 </div>
 
 <p class="muted">Found a claim on this site without a receipt? That's a bug.
-<a href="mailto:vladimirvukojicic@gmail.com?subject=Plum%20evidence%20bug">Report
+<a href="mailto:vladimirvukojicic@gmail.com?subject=Tilltrend%20evidence%20bug">Report
 it</a> and we'll fix it or retract the claim.</p>
 
 </main>
 
 <footer class="site">
-  <img class="footer-logo" src="plum-lockup-dark-white.svg" alt="Plum" width="180" height="75">
-  <p><strong>Plum is pre-launch.</strong> Nothing on this site claims traction
+  <img class="footer-logo" src="tilltrend-lockup-dark-white.svg" alt="Tilltrend" width="180" height="75">
+  <p><strong>Tilltrend is pre-launch.</strong> Nothing on this site claims traction
   we don't have. Every product claim is reproducible — commands and observed
   results on the <a href="evidence.html">evidence page</a>. Demo numbers come from
   a public training dataset (2010&ndash;2014 bike sales), not from real merchants.</p>
@@ -273,7 +273,7 @@ it</a> and we'll fix it or retract the claim.</p>
     <a href="evidence.html">Evidence</a>
     <a href="changelog.html">Changelog</a>
     <a href="about.html">About</a>
-    <a href="mailto:vladimirvukojicic@gmail.com?subject=Plum%20early%20access">Contact / early access</a>
+    <a href="mailto:vladimirvukojicic@gmail.com?subject=Tilltrend%20early%20access">Contact / early access</a>
   </nav>
 </footer>
 

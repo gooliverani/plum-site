@@ -10,7 +10,7 @@
 18,BK-R93R-52,Road-150 Red- 52,Bikes,Road Bikes,Road,1080556,302,302,302
 19,BK-R93R-56,Road-150 Red- 56,Bikes,Road Bikes,Road,1055510,295,295,295
 
-# Plum receipt — provenance of the rows above
+# Tilltrend receipt — provenance of the rows above
 metric,product_performance
 tool,run_metric
 question,product_performance
@@ -27,4 +27,4 @@ sql,"SELECT product_key, product_number, product_name, category, subcategory, pr
 params,[10]
 caveat,orders is not additive across products (one order can hold several products).
 caveat,top_n=10: more segments/rows may exist beyond the returned set; any segment_sum covers the returned rows only.
-replay (model-free),python app\scripts\plum_replay.py rcp_be2f41222732489ca1b63dc107e916cd
+replay (model-free),python app\scripts\replay.py rcp_be2f41222732489ca1b63dc107e916cd

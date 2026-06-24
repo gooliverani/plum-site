@@ -1,28 +1,31 @@
-/* Plum marketing site — shared stylesheet.
-   Branding: the Plum palette on a warm off-white paper, keeping the printed-
-   receipt feel that is the product's whole point — but dressed in the brand:
-   Plum primary, Deep for dark headings/footer, Clay for calls to action, Leaf
-   for verified/positive proof. No frameworks, no network fonts, no JS. */
+/* Tilltrend marketing site — shared stylesheet.
+   Branding: graphite ink (#1A1B1D) on a warm off-white paper, with an emerald
+   accent (#5FB877) drawn from the Tilltrend logo, keeping the printed-receipt
+   feel that is the product's whole point. The palette is no longer provisional —
+   it matches the real logo: graphite for the primary/wordmark, emerald for CTAs
+   and verified/positive proof (the logo has no orange, so the CTA is emerald too).
+   No frameworks, no network fonts, no JS. Custom-property NAMES were renamed to --tilltrend during the D-044 de-Plum;
+   only style.css references them, so no markup changed. */
 
 :root {
-  /* brand palette */
-  --plum: #7E2F8E;        /* primary brand */
-  --plum-dark: #5f2069;   /* darker plum for hover / pressed states */
-  --deep: #4A1A57;        /* dark headings, dark sections, footer */
-  --deep-2: #3a1445;      /* deeper still, for gradient depth */
-  --clay: #E0743F;        /* warm CTA / secondary accent */
-  --clay-dark: #c45c29;   /* clay hover */
-  --leaf: #4E8A57;        /* positive / verified / checkmarks */
-  --leaf-dark: #3c6e44;   /* leaf hover / text on light */
+  /* brand palette — graphite ink + emerald (from the Tilltrend logo) */
+  --tilltrend: #1A1B1D;        /* primary brand (graphite ink) */
+  --tilltrend-dark: #0E0F11;   /* darker ink for hover / pressed states */
+  --deep: #1c1916;        /* dark headings, dark sections, footer */
+  --deep-2: #100e0c;      /* deeper still, for gradient depth */
+  --clay: #2F8F5E;        /* CTA / secondary accent (emerald — logo has no orange) */
+  --clay-dark: #256F49;   /* clay hover */
+  --leaf: #5FB877;        /* positive / verified / checkmarks (emerald) */
+  --leaf-dark: #2F8F5E;   /* leaf hover / text on light */
 
   /* surfaces */
-  --paper: #faf7fb;       /* faint plum-tinted off-white */
+  --paper: #faf8f6;       /* warm neutral off-white */
   --card: #ffffff;
-  --ink: #221426;         /* near-black with a plum undertone */
-  --ink-soft: #5e5066;
-  --rule: #e6dcea;        /* soft plum-tinted hairline */
-  --rule-strong: #cdbcd4;
-  --code-bg: #f3ecf6;     /* tinted code chip */
+  --ink: #1A1B1D;         /* graphite ink */
+  --ink-soft: #5a544f;
+  --rule: #e6e1dc;        /* soft neutral hairline */
+  --rule-strong: #cfc8c1;
+  --code-bg: #f1ede9;     /* neutral code chip */
 
   --mono: Consolas, "Cascadia Mono", "Courier New", monospace;
   --serif: Georgia, "Times New Roman", serif;
@@ -45,7 +48,7 @@ h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
 h2 { font-size: 1.6rem; margin: 2.5rem 0 0.75rem; border-bottom: 2px solid var(--rule); padding-bottom: 0.35rem; }
 h3 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
 
-a { color: var(--plum); }
+a { color: var(--tilltrend); }
 a:hover { color: var(--clay-dark); }
 
 code, pre {
@@ -84,7 +87,7 @@ header.site {
   gap: 0.5rem 1.5rem;
   padding-top: 1.25rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--plum);
+  border-bottom: 2px solid var(--tilltrend);
   margin-bottom: 2.5rem;
 }
 .brand {
@@ -104,9 +107,9 @@ header.site {
 .brand .tick { color: var(--leaf); }
 header.site nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; align-items: center; margin-left: auto; }
 header.site nav a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
-header.site nav a:hover { color: var(--plum); }
+header.site nav a:hover { color: var(--tilltrend); }
 header.site nav a[aria-current="page"] {
-  color: var(--plum);
+  color: var(--tilltrend);
   border-bottom: 2px solid var(--clay);
   font-weight: 600;
 }
@@ -144,7 +147,7 @@ header.site nav a[aria-current="page"] {
 .threeup section {
   background: var(--card);
   border: 1px solid var(--rule);
-  border-top: 3px solid var(--plum);
+  border-top: 3px solid var(--tilltrend);
   border-radius: 6px;
   padding: 1rem 1.25rem;
 }
@@ -191,7 +194,7 @@ header.site nav a[aria-current="page"] {
 /* changelog */
 .changelog-note {
   background: var(--card);
-  border-left: 4px solid var(--plum);
+  border-left: 4px solid var(--tilltrend);
   border-radius: 0 6px 6px 0;
   padding: 0.6rem 1.25rem;
   margin: 1rem 0 2rem;
@@ -218,7 +221,7 @@ th { background: var(--code-bg); font-family: var(--serif); color: var(--deep); 
 /* footer — Deep dark section, white lockup, white text */
 footer.site {
   background: var(--deep);
-  color: #e8dcec;
+  color: #ece7e2;
   margin-top: 3rem;
   padding-top: 2rem;
   padding-bottom: 2.5rem;
