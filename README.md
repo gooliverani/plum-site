@@ -1,7 +1,7 @@
 # Tilltrend — marketing site
 
 Published source for the **Tilltrend** marketing site, served via GitHub Pages at
-**https://gooliverani.github.io/tilltrend-site/**.
+**https://tilltrend.app/**.
 
 Tilltrend is an honest AI analyst for Shopify: every number traces to a governed
 metric definition and a replayable receipt.
