@@ -150,6 +150,13 @@ header.site nav a {
 header.site nav a:hover { color: var(--ink); background: rgba(255,255,255,.05); }
 header.site nav a[aria-current="page"] { color: #fff; background: rgba(95,184,119,.12); }
 
+/* mobile nav (hamburger) — zero-JS CSS checkbox, mirrors the app (D-037). Hidden
+   on desktop; the media query at the bottom turns it on. The checkbox stays
+   off-screen but focusable; the burger + scrim are <label>s that toggle it. */
+.nav-cb { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+.nav-burger, .nav-scrim { display: none; }
+
 .cta {
   display: inline-block;
   background: linear-gradient(180deg, #6cc888, var(--tilltrend));
@@ -289,12 +296,46 @@ footer.site nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; margin: 0
   h2 { font-size: 1.35rem; margin-top: 2rem; }
   h3 { font-size: 1.12rem; }
 
-  header.site { padding-left: 1rem; padding-right: 1rem; gap: 0.4rem 0.75rem; }
+  header.site { padding-left: 1rem; padding-right: 1rem; gap: 0.4rem 0.75rem;
+    flex-wrap: nowrap; }
   main { padding-left: 1rem; padding-right: 1rem; }
-  /* nav drops onto its own full-width row under the brand; tighter so 5 links +
-     CTA wrap cleanly instead of clipping on a ~360px phone */
-  header.site nav { margin-left: 0; width: 100%; gap: 0.25rem 0.15rem; }
-  header.site nav a { padding: 0.3rem 0.45rem; font-size: 0.9rem; }
+
+  /* --- hamburger nav: an off-canvas glass drawer, mirroring the app --- */
+  body:has(#nav-toggle:checked) { overflow: hidden; }   /* lock scroll while open */
+  .nav-burger {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: none; margin-left: auto; width: 42px; height: 42px;
+    border-radius: 10px; color: var(--ink); cursor: pointer; z-index: 70;
+  }
+  .nav-burger svg { width: 24px; height: 24px; }
+  .nav-burger:hover, .nav-burger:active { background: rgba(255,255,255,.06); }
+  .nav-burger .ic-close { display: none; }
+  .nav-cb:checked ~ .nav-burger .ic-burger { display: none; }
+  .nav-cb:checked ~ .nav-burger .ic-close { display: block; }
+  .nav-cb:focus-visible ~ .nav-burger { outline: 2px solid var(--leaf); outline-offset: 2px; }
+
+  header.site nav {
+    position: fixed; top: 0; right: 0; z-index: 60;
+    height: 100vh; height: 100dvh; width: min(82vw, 300px);
+    margin: 0; flex-direction: column; flex-wrap: nowrap; align-items: stretch;
+    gap: 0.3rem; padding: 4.75rem 0.9rem 1.25rem;
+    background: rgba(12,16,21,0.985);   /* near-opaque so links stay legible even where backdrop-filter is unsupported */
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    backdrop-filter: blur(16px) saturate(120%);
+    border-left: 1px solid rgba(255,255,255,.14);
+    box-shadow: -14px 0 36px rgba(0,0,0,.45);
+    transform: translateX(105%); transition: transform .24s ease; overflow-y: auto;
+  }
+  .nav-cb:checked ~ nav { transform: translateX(0); }
+  header.site nav a { font-size: 1rem; padding: 0.7rem 0.8rem; border-radius: 9px; }
+  header.site nav a.cta { text-align: center; margin-top: 0.45rem; }
+
+  .nav-scrim {
+    display: block; position: fixed; inset: 0; z-index: 50;
+    background: rgba(0,0,0,.45);
+    opacity: 0; visibility: hidden; transition: opacity .24s ease;
+  }
+  .nav-cb:checked ~ .nav-scrim { opacity: 1; visibility: visible; }
 
   .hero { margin: 1rem 0 2rem; }
   .hero p.tagline { font-size: 1.1rem; }
